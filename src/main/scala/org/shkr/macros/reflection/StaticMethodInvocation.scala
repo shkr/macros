@@ -1,5 +1,7 @@
 package org.shkr.macros.reflection
 
+import org.shkr.macros.reflection.StaticMethodMacroModel.{ActorAgent, Studio, Actor}
+
 object StaticMethodInvocation {
 
   val ru = scala.reflect.runtime.universe
