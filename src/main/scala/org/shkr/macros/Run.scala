@@ -28,5 +28,12 @@ object Run extends App {
     * ```
     * */
   val aStudio: RKStudios = new RKStudios("org.shkr.macros.StaticMethodMacroModel.DramaActorAgent")
-  println(s"Introducing : ${StaticMethodInvocation.launch(aStudio)}")
+  try {
+    println(s"Introducing : ${StaticMethodInvocation.launch(aStudio)}")
+  } catch {
+    case e: scala.reflect.internal.MissingRequirementError => {
+      println(Console.RED + aStudio.actorAgent + "Object is not found in this project" + Console.RESET)
+    }
+  }
+
 }
